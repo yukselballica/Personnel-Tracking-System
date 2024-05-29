@@ -1,0 +1,75 @@
+<%- include("partials/_header") -%>
+    <%- include("partials/_sidebar") -%>
+
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+                <div class="row">
+                    <div class="col-xl-12 col-sm-12 col-12 mb-4">
+                        <div class="breadcrumb-path ">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/"><img src="assets/img/dash.png" class="mr-2"
+                                            alt="breadcrumb">Home</a>
+                                </li>
+                                <li class="breadcrumb-item active"> Performans</li>
+                            </ul>
+                            <h3>Performans</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12 col-sm-12 col-12 ">
+                        <div class="card">
+
+                            <div class="table-responsive">
+                                <table class="table  custom-table  no-footer">
+                                    <thead>
+                                        <tr>
+                                            <th>Email</th>
+                                            <th>Name</th>
+                                            <th> Performance </th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% users.forEach((user)=>{ %>
+                                            <tr>
+                                                <td>
+                                                    <label>
+                                                        <%= user.email %>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="table-img">
+                                                        <a href="#"><img src="uploads/<%=user.image%>" alt="profile"
+                                                                class="img-table"></a>
+                                                        <label>
+                                                            <%= user.name %>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <label>
+                                                        <%= user.performans %>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="actionset">
+                                                        <label><a class="action_label5"
+                                                                href="/performans-update?email=<%= user.email %>">Edit
+                                                                <i data-feather="edit"></i></a></label>
+                                                        <label><a class="action_label4"
+                                                                href="/performans-delete?email=<%= user.email %>">Delete
+                                                                <i data-feather="trash-2"></i></a></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include("partials/_footer.ejs") %>

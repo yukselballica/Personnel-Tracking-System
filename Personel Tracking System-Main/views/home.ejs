@@ -1,0 +1,138 @@
+<%- include("partials/_header") -%>
+    <%- include("partials/_sidebar") -%>
+
+
+
+
+
+
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+                <div class="page-name 	mb-4">
+                    <h4 class="m-0"><img src="uploads/<%= user.image %>" class="mr-1" alt="profile" /> Welcome <%=
+                            user.name %>
+                    </h4>
+                    
+                </div>
+                <div class="row mb-4">
+                    <div class="col-xl-6 col-sm-12 col-12">
+                        <div class="breadcrumb-path ">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><img src="assets/img/dash.png"
+                                            class="mr-3" alt="breadcrumb" />Home</a>
+                                </li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ul>
+                            <h3> Dashboard</h3>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card board1 fill1 ">
+                            <div class="card-body">
+                                <div class="card_widget_header">
+                                    <label>Employees</label>
+                                    <h4>
+                                        <%= totalUser %>
+                                    </h4>
+                                </div>
+                                <div class="card_widget_img">
+                                    <img src="assets/img/dash1.png" alt="card-img" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card board1 fill4 ">
+                            <div class="card-body">
+                                <div class="card_widget_header">
+                                    <% if(isAdmin) { %>
+                                        <label>Salary</label>
+                                        <h4>
+                                            <%=totalSalary %>$
+                                        </h4>
+                                        <% } else { %>
+                                            <label>Salary</label>
+                                            <h4>
+                                                <%= userSalary.salary %>$
+                                            </h4>
+                                            <% } %>
+                                </div>
+                                <div class="card_widget_img">
+                                    <img src="assets/img/dash4.png" alt="card-img" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-sm-12 col-12 d-flex">
+                        <div class="card card-list flex-fill">
+                            <div class="card-header ">
+                                <h4 class="card-title">Peak Performance</h4>
+                            </div>
+                            <div class="card-body">
+                                <% top5Performers.forEach((user)=> { %>
+                                    <div class="team-list">
+                                        <div class="team-view">
+                                            <div class="team-img">
+                                                <img src="uploads/<%= user.image %>" alt="avatar" />
+                                            </div>
+                                            <div class="team-content">
+                                                <label>
+                                                    <%= user.name %>
+                                                </label>
+                                                <span>
+                                                    <%= user.performans %>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-sm-12 col-12 d-flex">
+                        <div class="card card-list flex-fill">
+                            <div class="card-header">
+                                <div class="">
+                                    <h4 class="card-title">Recent Activities</h3>
+                                </div>
+                            </div>
+                            <div class="card-body dash-activity">
+                                <div class="slimscroll activity_scroll">
+                                    <% lastRecent.forEach((lastrecent)=> { %>
+
+                                        <div class="activity-set">
+                                            <div class="activity-img">
+                                                <img src="/uploads/<%= lastrecent.image %>" alt="avatar">
+                                            </div>
+                                            <div class="activity-content">
+                                                <label>
+                                                    <%= lastrecent.name %> - <%= lastrecent.type %>
+                                                </label>
+                                                <span>
+                                                    <%= lastrecent.date %>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <% }) %>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+
+        <%- include("partials/_footer") -%>

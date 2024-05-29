@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>DYPIM</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+
+        <div class="header">
+
+            <div class="header-left">
+                <a href="/" class="logo">
+                    <img src="assets/img/logo.jpg" alt="Logo">
+                </a>
+                <a href="/" class="logo logo-small">
+                    <img src="assets/img/logo.jpg" alt="Logo" width="30" height="30">
+                </a>
+                <a href="javascript:void(0);" id="toggle_btn">
+                    <span class="bar-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </a>
+            </div>
+
+
+
+
+
+
+
+            <a class="mobile_btn" id="mobile_btn">
+                <i class="fas fa-bars"></i>
+            </a>
+
+
+            <ul class="nav user-menu">
+
+
+
+
+                <li class="nav-item dropdown has-arrow main-drop">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <span class="user-img">
+                            <img src="uploads/<%= user.image %>" alt="">
+                            <span class="status online"></span>
+                        </span>
+                        <span><%= user.name %></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/profile"><i data-feather="user" class="mr-1"></i>
+                            Profile</a>
+
+                        <a class="dropdown-item" href="/logout"><i data-feather="log-out" class="mr-1"></i>
+                            Logout</a>
+                    </div>
+                </li>
+
+            </ul>
+            <div class="dropdown mobile-user-menu show">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
+                        class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right ">
+                    <a class="dropdown-item" href="/profile">My Profile</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </div>
+
+        </div>
